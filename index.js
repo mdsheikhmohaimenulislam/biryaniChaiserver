@@ -50,15 +50,31 @@ async function run() {
     }
   });
 
-  // get ifterData
-  // app.get("/ifterData", async (req, res) => {
-  //   try {
-  //     const result = await iftarCollection.find().toArray();
-  //     res.send(result);
-  //   } catch (error) {
-  //     res.status(500).send({ error: "Failed to Fetch" });
-  //   }
-  // });
+  // get ifterData.
+app.get("/ifterData", async (req, res) => {
+  const search = req.query.search;
+
+
+  let query = {}; // let ব্যবহার করলাম
+
+  if (search) {
+    query = {
+      $or: [
+        { district: { $regex: search, $options: "i" } },
+        { upazila: { $regex: search, $options: "i" } },
+        { mosque: { $regex: search, $options: "i" } },
+      ],
+    };
+  }
+
+  try {
+    const result = await iftarCollection.find(query).toArray();
+    res.send(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: "Failed to Fetch" });
+  }
+});
 
   try {
     await client.connect();
