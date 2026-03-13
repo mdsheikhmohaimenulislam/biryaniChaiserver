@@ -154,7 +154,7 @@ app.post("/iftarData", async (req, res) => {
       "Pinged your deployment. You successfully connected to MongoDB!",
     );
   } finally {
-  }
+  }                                   
 }
 run().catch(console.dir);
 
