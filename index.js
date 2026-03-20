@@ -9,6 +9,8 @@ const PORT = process.env.PORT;
 app.use(cors()); // allow requests from frontend
 app.use(express.json()); // parse JSON bodies
 
+
+
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.sltbrlg.mongodb.net/?appName=Cluster0`;
 
 const client = new MongoClient(uri, {
@@ -29,6 +31,8 @@ async function run() {
     res.send(result).status(500).send({ error: "Failed to insert data" });
   });
 
+
+  
   // get all division data
   app.get("/divisionData", async (req, res) => {
     try {
@@ -98,6 +102,8 @@ app.post("/iftarData", async (req, res) => {
   }
 });
 
+
+  
   // get ifterData.
   app.get("/ifterData", async (req, res) => {
     const search = req.query.search;
