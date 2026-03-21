@@ -14,6 +14,7 @@ app.use(express.json()); // parse JSON bodies
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.sltbrlg.mongodb.net/?appName=Cluster0`;
 
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -26,6 +27,7 @@ async function run() {
   const divisionCollection = db.collection("divisionData");
   const iftarCollection = db.collection("iftarData");
 
+  
   app.post("/divisionData", async (req, res) => {
     const data = req.body;
     const result = await divisionCollection.insertOne(data);
@@ -68,6 +70,10 @@ async function run() {
   //     res.status(500).send({ error: "Failed to insert data" });
   //   }
   // });
+
+
+
+  
 app.post("/iftarData", async (req, res) => {
   try {
     const { district, upazila, mosque, iftar, description } = req.body;
