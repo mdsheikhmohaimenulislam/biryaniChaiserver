@@ -6,6 +6,7 @@ const cors = require("cors");
 const PORT = process.env.PORT;
 
 
+
 // middlewares
 app.use(cors()); // allow requests from frontend
 app.use(express.json()); // parse JSON bodies
