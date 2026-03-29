@@ -72,8 +72,6 @@ async function run() {
   //   }
   // });
 
-
-
   
 app.post("/iftarData", async (req, res) => {
   try {
@@ -110,8 +108,6 @@ app.post("/iftarData", async (req, res) => {
   }
 });
 
-
-  
   // get ifterData.
   app.get("/ifterData", async (req, res) => {
     const search = req.query.search;
@@ -136,7 +132,6 @@ app.post("/iftarData", async (req, res) => {
       res.status(500).send({ error: "Failed to Fetch" });
     }
   });
-
 
 
 
