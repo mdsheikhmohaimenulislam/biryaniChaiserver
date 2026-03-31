@@ -4,14 +4,9 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT;
-
-
-
 // middlewares
 app.use(cors()); // allow requests from frontend
 app.use(express.json()); // parse JSON bodies
-
-
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.sltbrlg.mongodb.net/?appName=Cluster0`;
 
