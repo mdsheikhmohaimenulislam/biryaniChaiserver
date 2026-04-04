@@ -31,7 +31,7 @@ async function run() {
   });
 
 
-  
+
   // get all division data
   app.get("/divisionData", async (req, res) => {
     try {
@@ -42,6 +42,8 @@ async function run() {
     }
   });
 
+
+  
   // added iftarData
   // app.post("/iftarData", async (req, res) => {
   //   try {
@@ -69,6 +71,7 @@ async function run() {
 
 
 
+  
   
 app.post("/iftarData", async (req, res) => {
   try {
