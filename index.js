@@ -12,9 +12,6 @@ app.use(express.json()); // parse JSON bodies
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.sltbrlg.mongodb.net/?appName=Cluster0`;
 
-
-
-
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -181,6 +178,7 @@ app.post("/iftarData", async (req, res) => {
 
 
 }
+
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
