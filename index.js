@@ -28,8 +28,6 @@ async function run() {
     res.send(result).status(500).send({ error: "Failed to insert data" });
   });
 
-
-
   // get all division data
   app.get("/divisionData", async (req, res) => {
     try {
@@ -39,11 +37,6 @@ async function run() {
       res.status(500).send({ error: "Fetch failed" });
     }
   });
-
-
-
-
-  
 
 
   
